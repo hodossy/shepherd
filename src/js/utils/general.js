@@ -85,8 +85,8 @@ export function debounce(func, wait, immediate) {
  * @return {*}
  */
 export function drop(arr, n = 1) {
-  if (Array.isArray(arr)) {
-    return arr.slice(n);
+  if (arr.length && arr.length > n) {
+    return Array.prototype.slice.call(arr).slice(n);
   }
 
   return [];
